@@ -187,12 +187,28 @@
         }
 
         footer {
-            background-color: var(--dark-background);
-            color: var(--text-light);
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
             text-align: center;
-            padding: 30px 0;
+            font-family: Arial, sans-serif;
+        }
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
+        .footer-info strong {
+            color: #ffcc00; /* Cor do texto forte (ex: CNPJ e Endereço) */
+        }
+
+        footer p {
+            margin: 10px 0;
+            font-size: 14px;
+        }
+        .footer-info p {
+            margin: 5px 0;
+        }
         footer a {
             color: var(--secondary-color);
             text-decoration: none;
@@ -275,6 +291,104 @@
                 padding: 10px 20px;
             }
         }
+
+        .feedbacks-section {
+        padding: 60px 20px;
+        background-color: var(--light-background);
+        text-align: center;
+        }
+
+        .feedbacks-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .feedbacks-section p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+
+        .feedbacks-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .feedback-card {
+            background-color: var(--text-light);
+            padding: 20px;
+            box-shadow: 0 10px 20px var(--shadow-color);
+            border-radius: var(--border-radius);
+            text-align: center;
+            transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+        }
+
+        .feedback-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px var(--shadow-hover);
+        }
+
+        .feedback-text {
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            color: var(--text-dark);
+        }
+
+        .feedback-author {
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        .feedback-form {
+            margin-top: 40px;
+        }
+
+        .feedback-form textarea {
+            width: 100%;
+            padding: 12px;
+            border-radius: var(--border-radius);
+            border: 1px solid #ccc;
+            font-size: 1rem;
+            margin-bottom: 20px;
+            resize: vertical;
+        }
+
+        .feedback-form button {
+            background-color: var(--primary-color);
+            color: var(--text-light);
+            border: none;
+            padding: 12px 25px;
+            font-weight: 600;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            transition: background-color var(--transition-speed), transform var(--transition-speed);
+        }
+
+        .feedback-form button:hover {
+            background-color: rgba(26, 115, 232, 0.8);
+            transform: translateY(-5px);
+        }
+
+        @media screen and (max-width: 768px) {
+            .feedbacks-container {
+                grid-template-columns: 1fr;
+            }
+
+            .feedbacks-section h2 {
+                font-size: 2.2rem;
+            }
+
+            .feedbacks-section p {
+                font-size: 1rem;
+            }
+
+            .feedback-form button {
+                padding: 10px 20px;
+            }
+        }
+
     </style>
 </head>
 <body>
@@ -285,6 +399,7 @@
                 <ul>
                     <li><a href="#home" aria-label="Ir para a página inicial">Início</a></li>
                     <li><a href="#categories" aria-label="Ver categorias de carros">Categorias</a></li>
+                    <li><a href="#feedbacks" aria-label="Veja os feedbacks">Feedbacks</a></li>
                     <li><a href="#contact" aria-label="Entrar em contato">Contato</a></li>
                 </ul>
             </nav>
@@ -305,7 +420,7 @@
                 <h3>Sedan</h3>
             </div>
             <div class="category-card" onclick="redirectToWhatsApp('Hatchback')">
-                <img src="img/Hatchback.png" alt="Hatchback">
+                <img src="img/hatchback.png" alt="Hatchback">
                 <h3>Hatchback</h3>
             </div>
             <div class="category-card" onclick="redirectToWhatsApp('SUV')">
@@ -335,6 +450,31 @@
         </div>
     </section>
 
+    <section id="feedbacks" class="feedbacks-section">
+        <h2>O que nossos clientes dizem</h2>
+        <p>Veja os feedbacks de clientes que já utilizaram nossos serviços!</p>
+        <div class="feedbacks-container">
+            <div class="feedback-card">
+                <p class="feedback-text">"Fui muito bem atendido , fui atendido às  18:05 ( após o horario de atendimento)  , a moça ja havia desligado o computador pra ir embora, msm assim me atendeu com a maior paciência do mundo , e o rapaz que me entregou as chaves me tratou da mesma forma, parabéns a vocês,  deveriam receber aumento de salário"</p>
+                <p class="feedback-author">- Bruno Viana</p>
+            </div>
+            <div class="feedback-card">
+                <p class="feedback-text">"Recomendo, fui muito bem atendido e pessoal bem gente boa, rodei bem com o carro sem problema algum, preço justo e carros de qualidade! Virei cliente."</p>
+                <p class="feedback-author">- Lucas Germano Martinez</p>
+            </div>
+            <div class="feedback-card">
+                <p class="feedback-text">"Precisamos de uma locação , meu marido  escolheu a continental para compartilharmos a experiência.
+                    Empresa muito idônea, pessoal atencioso e o  carro atingiu nossas expectativas.
+                    Recomendo essa empresa!!!" </p>
+                <p class="feedback-author">- Jaine Violin Violin</p>
+            </div>
+        </div>
+        <div class="more-link">
+            <a href="https://www.google.com/search?q=continental+locadora+de+ve%C3%ADculos+&sca_esv=360d606574466e04&sxsrf=ADLYWILi68c3vjHM9c_89_tzzSoKtXsVtA%3A1733504984762&ei=2C9TZ66ZLt7c5OUP0ZGGyAg&ved=0ahUKEwiu5dSm0ZOKAxVeLrkGHdGIAYkQ4dUDCA8&uact=5&oq=continental+locadora+de+ve%C3%ADculos+&gs_lp=Egxnd3Mtd2l6LXNlcnAiImNvbnRpbmVudGFsIGxvY2Fkb3JhIGRlIHZlw61jdWxvcyAyBBAjGCcyBBAjGCcyBBAjGCcyBhAAGBYYHjIGEAAYFhgeMgYQABgWGB4yCBAAGIAEGKIEMggQABiABBiiBDIIEAAYgAQYogQyCBAAGIAEGKIESMYFUIwBWIwBcAF4AJABAJgBtgGgAbYBqgEDMC4xuAEDyAEA-AEBmAICoALPAcICCxAAGIAEGLADGKIEwgIIEAAYsAMY7wWYAwCIBgGQBgWSBwMxLjGgB4YL&sclient=gws-wiz-serp#lrd=0x94ecd0d0054fb6eb:0x88a327b9e0bebc28,1,,,," class="btn-more" target="_blank">Mais</a>
+        </div>
+    
+    </section>
+
     <section id="contact" class="contact-section">
         <h2>Fale Conosco</h2>
         <p>Se você tiver alguma dúvida, entre em contato com a nossa equipe pelo WhatsApp!</p>
@@ -342,12 +482,29 @@
     </section>
 
     <footer>
-        <p>&copy; 2024 Continental | Todos os direitos reservados</p>
-    </footer>
+        <div class="footer-content">
+            <p>&copy; 2024 Continental | Todos os direitos reservados</p>
+            <div class="footer-info">
+                <p><strong>CNPJ:</strong> 04.745.155/0001-08</p>
+                <p><strong>Endereço:</strong> Rua dos Carros, 123, São Paulo, SP</p>
+
+            </div>
+        </div>
+    </footer>>
 
     <a href="https://wa.me/55123456789" class="whatsapp-icon" aria-label="Entrar em contato via WhatsApp">
         <i class="fab fa-whatsapp"></i>
     </a>
+
+    <script>
+        // Função para 
+        function redirectToWhatsApp(category) {
+            let phoneNumber = '55123456789'; // Substitua pelo seu número do WhatsApp
+            let message = `Olá, gostaria de alugar um carro da categoria ${category}.`;
+            let url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+            window.open(url, '_blank');
+        }
+    </script>
 
 </body>
 </html>
