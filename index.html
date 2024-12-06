@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="Alugue carros para viagens com facilidade. Escolha sua categoria preferida e entre em contato pelo WhatsApp para mais informações.">
+    <meta name="keywords" content="aluguel de carros, carros, SUV, Sedan, Hatchback, aluguel, veículos, WhatsApp">
+    <meta name="author" content="Continental">
+    <title>Página de Contato</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary-color: #1a73e8;
+            --secondary-color: #34a853;
+            --dark-background: #121212;
+            --light-background: #f4f4f4;
+            --text-light: #ffffff;
+            --text-dark: #333333;
+            --text-muted: #666666;
+            --transition-speed: 0.3s;
+            --border-radius: 12px;
+            --shadow-color: rgba(0, 0, 0, 0.1);
+            --shadow-hover: rgba(0, 0, 0, 0.12);
+        }
+    
+        body {
+            font-family: 'Inter', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--light-background);
+            color: var(--text-dark);
+            line-height: 1.6;
+            transition: background-color var(--transition-speed), color var(--transition-speed);
+        }
+
+        .header-container {
+            background-color: var(--primary-color);
+            color: var(--text-light);
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 6px var(--shadow-color);
+        }
+    
+        .header-container h1 {
+            margin-bottom: 15px;
+            font-weight: 700;
+            font-size: 2.5rem;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav ul li a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 600;
+            position: relative;
+            transition: color var(--transition-speed), padding-bottom var(--transition-speed);
+            padding-bottom: 5px;
+        }
+
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--text-light);
+            transition: width var(--transition-speed);
+        }
+
+        nav ul li a:hover {
+            color: rgba(255, 255, 255, 0.8);
+            padding-bottom: 10px;
+        }
+
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+
+        .hero-section {
+            background: linear-gradient(rgba(26, 115, 232, 0.8), rgba(26, 115, 232, 0.8)), 
+                        url('https://source.unsplash.com/random/1600x900?car');
+            background-size: cover;
+            background-position: center;
+            color: var(--text-light);
+            text-align: center;
+            padding: 20px 20px;
+            position: relative;
+            margin-bottom: 50px;
+        }
+
+        .hero-section h2 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .hero-section p {
+            max-width: 700px;
+            margin: 0 auto 30px;
+            font-size: 1.2rem;
+            opacity: 0.85;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: var(--text-light);
+            text-decoration: none;
+            padding: 12px 25px;
+            font-weight: 600;
+            border-radius: var(--border-radius);
+            display: inline-block;
+            transition: background-color var(--transition-speed), transform var(--transition-speed);
+        }
+
+        .btn-primary:hover {
+            background-color: rgba(26, 115, 232, 0.8);
+            transform: translateY(-5px);
+        }
+
+        .categories-section {
+            padding: 60px 20px;
+            background-color: var(--light-background);
+        }
+
+        .categories-section h2 {
+            text-align: center;
+            margin-bottom: 40px;
+            color: var(--text-dark);
+            font-size: 2.2rem;
+            font-weight: 700;
+        }
+
+        .categories-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .category-card {
+            background-color: var(--text-light);
+            padding: 25px;
+            box-shadow: 0 10px 20px var(--shadow-color);
+            border-radius: var(--border-radius);
+            text-align: center;
+            transition: 
+                transform var(--transition-speed),
+                box-shadow var(--transition-speed);
+            cursor: pointer;
+            overflow: hidden;
+        }
+
+        .category-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px var(--shadow-hover);
+        }
+
+        .category-card img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            border-radius: var(--border-radius);
+            transition: transform var(--transition-speed);
+        }
+
+        .category-card:hover img {
+            transform: scale(1.1);
+        }
+
+        .category-card h3 {
+            margin-top: 15px;
+            font-size: 1.3em;
+            color: var(--text-dark);
+        }
+
+        footer {
+            background-color: var(--dark-background);
+            color: var(--text-light);
+            text-align: center;
+            padding: 30px 0;
+        }
+
+        footer a {
+            color: var(--secondary-color);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        .contact-section {
+            padding: 60px 20px;
+            background-color: var(--light-background);
+            text-align: center;
+        }
+
+        .contact-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .contact-section p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+
+        .btn-whatsapp {
+            display: inline-block;
+            padding: 12px 25px;
+            background-color: #25D366;
+            color: white;
+            font-weight: 600;
+            border-radius: var(--border-radius);
+            text-decoration: none;
+            transition: background-color var(--transition-speed), transform var(--transition-speed);
+        }
+
+        .btn-whatsapp:hover {
+            background-color: #128C7E;
+            transform: translateY(-5px);
+        }
+
+        .whatsapp-icon {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            font-size: 36px;
+            background-color: #25D366;
+            color: white;
+            padding: 15px;
+            border-radius: 50%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s;
+        }
+
+        .whatsapp-icon:hover {
+            transform: scale(1.1);
+        }
+
+        @media screen and (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+            }
+
+            .categories-container {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .hero-section h2 {
+                font-size: 2.2rem;
+            }
+
+            .hero-section p {
+                font-size: 1rem;
+            }
+
+            .btn-primary {
+                padding: 10px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <h1>Continental</h1>
+            <nav>
+                <ul>
+                    <li><a href="#home" aria-label="Ir para a página inicial">Início</a></li>
+                    <li><a href="#categories" aria-label="Ver categorias de carros">Categorias</a></li>
+                    <li><a href="#contact" aria-label="Entrar em contato">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="home" class="hero-section">
+        <h2>Alugue carros para sua próxima viagem</h2>
+        <p>Escolha a categoria do carro que mais combina com você e entre em contato pelo WhatsApp.</p>
+        <a href="https://wa.me/55123456789?text=Olá,%20gostaria%20de%20alugar%20um%20carro!" class="btn-primary" target="_blank" aria-label="Falar conosco no WhatsApp">Alugar Agora</a>
+    </section>
+
+    <section id="categories" class="categories-section">
+        <h2>Escolha sua Categoria</h2>
+        <div class="categories-container">
+            <div class="category-card" onclick="redirectToWhatsApp('Sedan')">
+                <img src="img/sedan.png" alt="Sedan">
+                <h3>Sedan</h3>
+            </div>
+            <div class="category-card" onclick="redirectToWhatsApp('Hatchback')">
+                <img src="img/hatchback.png" alt="Hatchback">
+                <h3>Hatchback</h3>
+            </div>
+            <div class="category-card" onclick="redirectToWhatsApp('SUV')">
+                <img src="img/suv.png" alt="SUV">
+                <h3>SUV</h3>
+            </div>
+            <div class="category-card" onclick="redirectToWhatsApp('Crossover')">
+                <img src="img/crossover.png" alt="Crossover">
+                <h3>Crossover</h3>
+            </div>
+            <div class="category-card" onclick="redirectToWhatsApp('Coupé')">
+                <img src="img/coupe.png" alt="Coupé">
+                <h3>Coupé</h3>
+            </div>
+            <div class="category-card" onclick="redirectToWhatsApp('Picape')">
+                <img src="img/picape.png" alt="Picape">
+                <h3>Picape</h3>
+            </div>
+            <div class="category-card" onclick="redirectToWhatsApp('Esportivo')">
+                <img src="img/esportivo.png" alt="Esportivo">
+                <h3>Esportivo</h3>
+            </div>
+            <div class="category-card" onclick="redirectToWhatsApp('Caminhão')">
+                <img src="img/caminhao.png" alt="Caminhão">
+                <h3>Caminhão</h3>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+        <h2>Fale Conosco</h2>
+        <p>Se você tiver alguma dúvida, entre em contato com a nossa equipe pelo WhatsApp!</p>
+        <a href="https://wa.me/55123456789?text=Olá,%20gostaria%20de%20alugar%20um%20carro!" class="btn-whatsapp" target="_blank" aria-label="Falar conosco no WhatsApp">Enviar mensagem</a>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Continental | Todos os direitos reservados</p>
+        <a href="https://www.instagram.com/continental" target="_blank" aria-label="Visite nosso Instagram">Instagram</a>
+    </footer>
+
+    <a href="https://wa.me/55123456789" class="whatsapp-icon" aria-label="Entrar em contato via WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+</body>
+</html>
